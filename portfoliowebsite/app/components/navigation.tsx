@@ -86,7 +86,7 @@ export function Navigation() {
             <Button variant="ghost" size="icon">
               <Moon className="h-5 w-5" />
             </Button>
-            <Button className="text-white" variant="outline">
+            <Button className="text-white bg-black" variant="outline">
               Connect <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

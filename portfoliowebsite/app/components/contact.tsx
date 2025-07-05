@@ -46,7 +46,7 @@ export function ContactSection() {
 
       toast.success("Message sent successully!", { id: LoadingToast });
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch {
       toast.error("Failed to send message. Try again", { id: LoadingToast });
     } finally {
       setLoading(false);

@@ -20,12 +20,12 @@ const projects = [
     liveUrl: "https://lawlens.vercel.app",
   },
   {
-    title: "Full Stack Project",
+    title: "Cofuel - Event Booking Web App",
     category: "Web App",
     image: "/cofuel.png",
     type: "web",
     description:
-      "A comprehensive web application built with modern technologies. Features user authentication, real-time data processing, and responsive design.",
+      "A full-stack event booking platform tailored for weddings, parties, and other celebrations. Users can browse events, make reservations, and manage bookings with an elegant, user-friendly interface.",
     status: "In Progress",
     github: "https://github.com/AnsahFredd/Cofuel",
     liveUrl: "https://cofuel-umber.vercel.app/",

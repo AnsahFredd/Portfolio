@@ -18,7 +18,7 @@ export function ContactSection() {
   });
 
   const api_url = process.env.NEXT_PUBLIC_API_ENDPOINT;
-  const [Loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -64,8 +64,8 @@ export function ContactSection() {
             </p>
             <h2 className={`text-4xl font-bold mt-2 `}>Get in Touch</h2>
             <p className={`mt-4`}>
-              I would love to hear from you. Whether it's a project, a question,
-              or just a hello — use the form below!
+              I would love to hear from you. Whether it&#39;s a project, a
+              question, or just a hello - use the form below!
             </p>
           </div>
           <Card className={`shadow-lg border-none rounded-xl`}>
@@ -122,7 +122,7 @@ export function ContactSection() {
                   type="submit"
                   className="w-full bg-pink-600 hover:bg-pink-700 text-white text-base font-medium"
                 >
-                  {Loading ? "Sending..." : " Send Message "}
+                  {loading ? "Sending..." : " Send Message "}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </form>
@@ -131,10 +131,11 @@ export function ContactSection() {
         </div>
 
         {/* Image Section */}
-        <div className="w-full h-full rounded-xl overflow-hidden">
+        <div className="relative w-full h-full rounded-xl overflow-hidden">
           <Image
             src="/code.jpg"
             alt="code"
+            fill
             className="w-full h-full object-cover rounded-xl shadow-md"
           />
         </div>

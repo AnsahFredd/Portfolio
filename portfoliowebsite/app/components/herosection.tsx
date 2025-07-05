@@ -10,7 +10,6 @@ export function HeroSection() {
         {/* Floating Profile Images */}
         <div className="relative mb-8"></div>
 
-        {/* Main Profile */}
         <div className="w-48 h-48 aspect-square mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
           <Image
             src="/fred2.jpg"
@@ -26,17 +25,16 @@ export function HeroSection() {
         </p>
 
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          <span className="text-pink-600">software developer</span>
+          <span className="text-pink-600">Full Stack Developer</span>
           <br />
           based in Ghana.
         </h1>
 
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-          I&#39;m a passionate software developer from Ghana, dedicated to
-          building responsive, user-friendly web interfaces. I&#39;m currently
-          growing my skills through real-world projects and constantly exploring
-          modern technologies like React, Tailwind CSS, Node.js, Express.js, and
-          Next.js.
+          I&#39;m a passionate full stack developer from Ghana with 3+ years of
+          experience building responsive, user-friendly web applications. I
+          specialize in modern technologies like React, Next.js, Node.js, and
+          MongoDB to create seamless digital experiences.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">

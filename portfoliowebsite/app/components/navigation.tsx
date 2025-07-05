@@ -10,12 +10,10 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-sm px-6 py-4 shadow-sm">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
-        {/* Logo */}
         <div className="text-2xl font-bold text-gray-900">
           AnsFredd<span className="text-pink-500">.</span>
         </div>
 
-        {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#home" className="text-gray-700 hover:text-gray-900">
             Home
@@ -34,17 +32,15 @@ export function Navigation() {
           </a>
         </div>
 
-        {/* Actions (Theme + Connect) */}
         <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" size="icon">
             <Moon className="h-5 w-5" />
           </Button>
-          <Button className="text-white" variant="outline">
+          <Button className="text-white bg-black" variant="outline">
             Connect <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <Button
             variant="ghost"
@@ -81,7 +77,6 @@ export function Navigation() {
             Testimonials
           </a>
 
-          {/* Optional: Mobile actions */}
           <div className="flex items-center space-x-4 mt-4">
             <Button variant="ghost" size="icon">
               <Moon className="h-5 w-5" />

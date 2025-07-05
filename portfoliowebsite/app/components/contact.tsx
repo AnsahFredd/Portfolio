@@ -130,7 +130,6 @@ export function ContactSection() {
           </Card>
         </div>
 
-        {/* Image Section */}
         <div className="relative w-full h-full rounded-xl overflow-hidden">
           <Image
             src="/code.jpg"

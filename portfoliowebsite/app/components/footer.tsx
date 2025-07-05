@@ -9,7 +9,6 @@ export function Footer() {
   return (
     <footer className="py-12 px-6 bg-white border-t">
       <div className="max-w-6xl mx-auto">
-        {/* Brand and Contact */}
         <div className="text-center mb-8">
           <div className="text-2xl font-bold text-gray-900 mb-2">
             AnsFredd<span className="text-pink-500">.</span>
@@ -49,7 +48,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t text-sm text-gray-600">
           <p>© {year} AnsFredd. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">

@@ -67,12 +67,11 @@ export function PortfolioSection() {
             My Latest Work
           </h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Explore a curated selection of projects showcasing my skills in
-            full-stack and front-end development.
+            Projects that highlight my skills in full-stack development, mobile
+            apps, and modern web technologies.
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => (
             <motion.div
@@ -162,7 +161,6 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        {/* Show More Button */}
         <div className="text-center">
           <a
             href="https://github.com/AnsahFredd"

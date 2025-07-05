@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme variables */
-  --background: #111111;
-  --foreground: #171717;
+  /* Light theme variables - FIXED */
+  --background: #ffffff; /* Changed from #111111 to white */
+  --foreground: #171717; /* Keep dark text on light background */
   --card: #ffffff;
   --card-foreground: #171717;
   --primary: #171717;
@@ -17,7 +17,7 @@
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #e5e5e5;
-  --input: #e5e5e5;
+  --input: #ffffff; /* Changed from #e5e5e5 to white for cleaner look */
   --ring: #171717;
 }
 
@@ -57,5 +57,3 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
-
-/* Remove the media query since we're using class-based dark mode */

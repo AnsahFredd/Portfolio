@@ -50,7 +50,7 @@ const projects = [
       "A modern, responsive portfolio website showcasing my skills and projects. Built with Next.js and Tailwind CSS.",
     status: "Completed",
     github: "https://github.com/AnsahFredd/Portfolio",
-    liveUrl: "https://yourportfolio.com",
+    liveUrl: "https://portfolio-smoky-chi-16nwjts7uz.vercel.app/",
   },
 ];
 

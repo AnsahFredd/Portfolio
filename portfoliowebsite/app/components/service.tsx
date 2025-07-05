@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  ArrowRight,
-  Monitor,
-  Smartphone,
-  Code,
-  Server,
-  Database,
-} from "lucide-react";
-import { Button } from "./ui/button";
+import { Monitor, Smartphone, Code, Server, Database } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
 const services = [
@@ -51,8 +43,9 @@ export function ServicesSection() {
           <p className="text-pink-600 mb-2">What I offer</p>
           <h2 className="text-4xl font-bold text-gray-900">My Services</h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            I'm Frederick from Ghana — a full-stack developer who builds modern
-            web and mobile solutions with Django, Next.js, and React Native.
+            I&#39;m Frederick from Ghana, a full-stack developer who builds
+            modern web and mobile solutions with Django, Next.js, and React
+            Native.
           </p>
         </div>
 

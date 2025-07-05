@@ -8,6 +8,8 @@ import type React from "react";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import Image from "next/image";
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -62,8 +64,8 @@ export function ContactSection() {
             </p>
             <h2 className={`text-4xl font-bold mt-2 `}>Get in Touch</h2>
             <p className={`mt-4`}>
-              I'd love to hear from you. Whether it's a project, a question, or
-              just a hello — use the form below!
+              I would love to hear from you. Whether it's a project, a question,
+              or just a hello — use the form below!
             </p>
           </div>
           <Card className={`shadow-lg border-none rounded-xl`}>
@@ -130,7 +132,7 @@ export function ContactSection() {
 
         {/* Image Section */}
         <div className="w-full h-full rounded-xl overflow-hidden">
-          <img
+          <Image
             src="/code.jpg"
             alt="code"
             className="w-full h-full object-cover rounded-xl shadow-md"

@@ -60,7 +60,7 @@ export function AboutSection() {
                   Passionate Full Stack Developer
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  I'm a passionate software developer with a strong focus on
+                  I&#39;m a passionate software developer with a strong focus on
                   creating user-friendly web interfaces and robust backend
                   systems. I enjoy exploring modern technologies and constantly
                   learning new frameworks to build innovative solutions.
@@ -68,8 +68,8 @@ export function AboutSection() {
                 <p className="text-gray-600 leading-relaxed">
                   With expertise in both frontend and backend development, I
                   bring ideas to life through clean code, intuitive designs, and
-                  seamless user experiences. I'm always excited to take on new
-                  challenges and collaborate on interesting projects.
+                  seamless user experiences. I&#39;m always excited to take on
+                  new challenges and collaborate on interesting projects.
                 </p>
               </div>
 

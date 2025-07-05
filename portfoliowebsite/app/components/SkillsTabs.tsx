@@ -9,7 +9,6 @@ import {
   FaNodeJs,
   FaJs,
   FaPython,
-  FaDatabase,
   FaGitAlt,
 } from "react-icons/fa";
 import {
@@ -18,7 +17,6 @@ import {
   SiDjango,
   SiTypescript,
   SiMongodb,
-  SiPostgresql,
   SiExpress,
   SiFirebase,
   SiVercel,

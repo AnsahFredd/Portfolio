@@ -8,8 +8,6 @@ import type React from "react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-import Image from "next/image";
-
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -54,90 +52,83 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className={`py-20 px-4`}>
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Contact Form */}
-        <div>
-          <div className="mb-8">
-            <p className="text-pink-500 uppercase font-semibold tracking-wide">
-              Connect with me
-            </p>
-            <h2 className={`text-4xl font-bold mt-2 `}>Get in Touch</h2>
-            <p className={`mt-4`}>
-              I would love to hear from you. Whether it&#39;s a project, a
-              question, or just a hello - use the form below!
-            </p>
-          </div>
-          <Card className={`shadow-lg border-none rounded-xl`}>
-            <CardContent className="p-8">
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                {/* Name & Email */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className={`text-sm font-medium `}>
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      placeholder="John Doe"
-                      className={`rounded-md shadow-inner transition`}
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="email" className={`text-sm font-medium`}>
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      className={`rounded-md shadow-inner transition`}
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </div>
+    <section id="contact" className="py-32 px-4 bg-muted/20 transition-colors duration-500 overflow-hidden relative">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-pink-500/10 blur-[150px] rounded-full pointer-events-none" />
 
-                {/* Message */}
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="message" className={`text-sm font-medium`}>
-                    Message
+      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center relative z-10 w-full">
+        {/* Centralized Typography */}
+        <div className="text-center mb-16 space-y-6 w-full">
+          <p className="inline-block px-4 py-2 rounded-full bg-pink-500/10 text-pink-600 uppercase font-black tracking-[0.3em] text-[10px] mb-2 border border-pink-500/20">
+            Next Project
+          </p>
+          <h2 className="text-5xl md:text-8xl font-black text-foreground leading-[1.1] tracking-tighter">
+            Let&#39;s build something <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-500 to-purple-500">extraordinary</span>.
+          </h2>
+          <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto font-medium">
+            Whether you have a groundbreaking idea or a complex technical 
+            challenge, I&#39;m here to architect the solution.
+          </p>
+        </div>
+
+        {/* Centralized Form */}
+        <Card className="w-full shadow-[0_20px_60px_-15px_rgba(236,72,153,0.1)] border-border/50 bg-card/60 backdrop-blur-2xl rounded-[3rem] overflow-hidden">
+          <CardContent className="p-8 md:p-16">
+            <form className="space-y-10" onSubmit={handleSubmit}>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-4">
+                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground ml-2">
+                    Name
                   </label>
-                  <Textarea
-                    id="message"
-                    placeholder="Type your message here..."
-                    value={formData.message}
+                  <Input
+                    id="name"
+                    placeholder="Jane Smith"
+                    className="rounded-3xl bg-muted/50 border border-border h-16 px-8 focus:ring-2 focus:ring-pink-600 transition-all font-bold text-lg placeholder:text-muted-foreground/50 shadow-inner"
+                    value={formData.name}
                     onChange={handleChange}
                     required
-                    className={`min-h-[150px] rounded-md shadow-inner`}
                   />
                 </div>
+                <div className="flex flex-col gap-4">
+                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground ml-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="jane@innovation.com"
+                    className="rounded-3xl bg-muted/50 border border-border h-16 px-8 focus:ring-2 focus:ring-pink-600 transition-all font-bold text-lg placeholder:text-muted-foreground/50 shadow-inner"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+              </div>
 
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  className="w-full bg-pink-600 hover:bg-pink-700 text-white text-base font-medium"
-                >
-                  {loading ? "Sending..." : " Send Message "}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
+              <div className="flex flex-col gap-4">
+                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground ml-2">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  placeholder="Tell me about your vision..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="min-h-[200px] rounded-[2rem] bg-muted/50 border border-border p-8 focus:ring-2 focus:ring-pink-600 transition-all font-bold text-lg placeholder:text-muted-foreground/50 shadow-inner resize-none"
+                />
+              </div>
 
-        <div className="relative w-full h-64 md:h-full rounded-xl overflow-hidden">
-          <Image
-            src="/code.jpg"
-            alt="code"
-            fill
-            className="w-full h-full object-cover rounded-xl shadow-md"
-          />
-        </div>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-foreground text-background hover:bg-pink-600 hover:text-white h-20 rounded-[2rem] text-xl font-black shadow-2xl transition-all active:scale-[0.98] flex items-center justify-center gap-4 disabled:opacity-50 group hover:-translate-y-1"
+              >
+                {loading ? "Transmitting..." : "Send Message"}
+                <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );

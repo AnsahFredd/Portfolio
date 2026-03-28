@@ -7,15 +7,15 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-12 px-6 bg-white border-t">
+    <footer className="py-24 px-6 bg-background border-t border-border/50 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <div className="text-2xl font-bold text-gray-900 mb-2">
-            AnsFredd<span className="text-pink-500">.</span>
+          <div className="text-3xl font-black text-foreground mb-4 italic tracking-tighter">
+            AnsFredd<span className="text-pink-600">.</span>
           </div>
 
-          <div className="flex items-center justify-center space-x-2 text-gray-600 mb-4">
-            <Mail className="h-4 w-4" />
+          <div className="flex items-center justify-center space-x-3 text-muted-foreground mb-8 font-bold text-lg">
+            <Mail className="h-5 w-5 text-pink-600" />
             <span>ansahfredrick01@gmail.com</span>
           </div>
 
@@ -30,7 +30,7 @@ export function Footer() {
               <FaGithub />
             </a>
             <a
-              href="https://www.linkedin.com/in/ansah-frederick-8a63b126b"
+              href="www.linkedin.com/in/ansah-fredrick-owusu-709654394"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition"
@@ -48,17 +48,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t text-sm text-gray-600">
-          <p>© {year} AnsFredd. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gray-900">
-              Terms of Service
+        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-border/50 text-base text-muted-foreground font-bold">
+          <p>© {year} AnsFredd • Architecting the Future.</p>
+          <div className="flex space-x-8 mt-6 md:mt-0 uppercase tracking-widest text-xs">
+            <a href="#" className="hover:text-pink-600 transition-colors">
+              Terms
             </a>
-            <a href="#" className="hover:text-gray-900">
-              Privacy Policy
+            <a href="#" className="hover:text-pink-600 transition-colors">
+              Privacy
             </a>
-            <a href="#contact" className="hover:text-gray-900">
-              Connect with me
+            <a href="#contact" className="hover:text-pink-600 transition-colors">
+              Connect
             </a>
           </div>
         </div>

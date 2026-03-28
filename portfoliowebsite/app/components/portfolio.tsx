@@ -1,179 +1,267 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ExternalLink, Clock } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
-const projects = [
+export interface Project {
+  title: string;
+  category: string;
+  image: string;
+  type: string;
+  slug?: string;
+  description: string;
+  tags: string[];
+  github: string;
+  liveUrl: string | null;
+  featured?: boolean;
+}
+
+export const projects: Project[] = [
   {
-    title: "Full Stack AI-powered Legal Document Intelligence Platform",
-    category: "Web App",
+    title: "AI-powered Legal Document Intelligence Platform",
+    category: "Featured • AI & Law",
     image: "/lawlens.png",
     type: "web",
-    description:
-      "An intelligent legal document analysis platform powered by AI. Features document parsing, contract analysis, and legal insights generation.",
-    status: "In Progress",
+    slug: "lawlens",
+    description: "A sophisticated platform designed to revolutionize legal research and document review using state-of-the-art LLMs.",
+    tags: ["Next.js 15", "Django", "GPT-4", "PostgreSQL"],
     github: "https://github.com/AnsahFredd/LawLens",
     liveUrl: "https://lawlens.vercel.app",
+    featured: true,
   },
   {
-    title: "Cofuel - Event Booking Web App",
+    title: "Cofuel - Event Booking",
     category: "Web App",
     image: "/cofuel.png",
     type: "web",
-    description:
-      "A full-stack event booking platform tailored for weddings, parties, and other celebrations. Users can browse events, make reservations, and manage bookings with an elegant, user-friendly interface.",
-    status: "In Progress",
+    description: "Elegant event booking platform for high-end celebrations and corporate gatherings.",
+    tags: ["React", "Firebase", "Tailwind"],
     github: "https://github.com/AnsahFredd/Cofuel",
     liveUrl: "https://cofuel-umber.vercel.app/",
   },
   {
-    title: "Movie App",
+    title: "Movie Discovery Explorer",
     category: "Mobile App",
     image: "/movie.png",
     type: "mobile",
-    description:
-      "A sleek movie discovery app with trending movies, search functionality, and detailed movie information. Built with React Native.",
-    status: "Completed",
+    description: "Sleek React Native application featuring immersive animations and deep-search capabilities.",
+    tags: ["React Native", "TMDB API", "Reanimated"],
     github: "https://github.com/AnsahFredd/movie_app",
     liveUrl: null,
   },
   {
-    title: "Portfolio Website",
-    category: "Web App",
+    title: "Personal Brand Portfolio",
+    category: "Web App • 2026 Edition",
     image: "/portfolio.png",
     type: "web",
-    description:
-      "A modern, responsive portfolio website showcasing my skills and projects. Built with Next.js and Tailwind CSS.",
-    status: "Completed",
+    description: "The site you are currently viewing. Built with Next.js 15, Tailwind 4, and Framer Motion.",
+    tags: ["Next.js 15", "Tailwind 4", "Framer Motion"],
     github: "https://github.com/AnsahFredd/Portfolio",
     liveUrl: "https://portfolio-smoky-chi-16nwjts7uz.vercel.app/",
   },
+  {
+    title: "Elite E-commerce Hub",
+    category: "Web App",
+    image: "/ecommerce.png",
+    type: "web",
+    description: "Full-scale e-commerce solution with integrated payments and inventory management.",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    github: "https://github.com/AnsahFredd/CodeAlpha_E-commerce",
+    liveUrl: "https://shophub-lake.vercel.app/",
+  },
+  {
+    title: "NextGen Management Tool",
+    category: "Web App",
+    image: "/project_mg.png",
+    type: "web",
+    description: "Comprehensive project coordination tool focusing on velocity and team synergy.",
+    tags: ["React", "Express", "PostgreSQL"],
+    github: "https://github.com/AnsahFredd/CodeAlpha_Project_Management_Tool",
+    liveUrl: "https://projecthub-phi-seven.vercel.app/dashboard",
+  },
 ];
 
+import Link from "next/link";
+
 export function PortfolioSection() {
+  const featuredProject = projects.find(p => p.featured);
+  const otherProjects = projects.filter(p => !p.featured).slice(0, 3); // Show top 3 max here
+
   return (
-    <section id="work" className="py-16 px-6 bg-white ">
-      <div className="max-w-6xl mx-auto">
+    <section id="work" className="py-24 px-6 bg-background transition-colors duration-500">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <p className="text-pink-500 font-semibold uppercase tracking-wide">
-            My Portfolio
-          </p>
-          <h2 className="text-4xl font-bold text-gray-900 mt-2">
-            My Latest Work
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Projects that highlight my skills in full-stack development, mobile
-            apps, and modern web technologies.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+          <div className="max-w-2xl text-left">
+            <motion.p className="text-pink-600 font-black uppercase tracking-[0.3em] text-xs mb-3">Curated Work</motion.p>
+            <motion.h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tighter">
+              Featured <span className="text-pink-600">Projects</span>
+            </motion.h2>
+          </div>
+          <motion.p className="text-muted-foreground text-lg max-w-md font-medium leading-relaxed">
+            High-performance solutions built for scale and human experience.
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {projects.map((project, index) => (
+        <div className="flex flex-col gap-12 mb-16">
+          {/* Featured Project - Large Card */}
+          {featuredProject && (
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
-                <div className="w-full h-64 relative">
-                  {project.type === "mobile" ? (
-                    // Mobile mockup with phone frame
-                    <div className="flex items-center justify-center h-full bg-gradient-to-br from-gray-50 to-gray-100 p-6">
-                      <div className="relative">
-                        {/* Phone frame */}
-                        <div className="w-32 h-56 bg-gray-900 rounded-2xl p-1 shadow-2xl">
-                          <div className="w-full h-full bg-white rounded-xl overflow-hidden relative">
-                            <Image
-                              src={project.image}
-                              alt={project.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        </div>
-                        {/* Phone notch */}
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-gray-900 rounded-full"></div>
-                        {/* Phone button */}
-                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-0.5 bg-gray-900 rounded-full"></div>
-                      </div>
-                    </div>
-                  ) : (
-                    // Regular web project layout
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  )}
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-xl font-bold text-gray-900 flex-1">
-                      {project.title}
-                    </h3>
-                    {project.status === "In Progress" && (
-                      <span className="flex items-center gap-1 bg-amber-100 text-amber-700 px-2 py-1 rounded-full text-xs font-medium">
-                        <Clock className="h-3 w-3" />
-                        In Progress
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-gray-600 text-sm mb-1">
-                    {project.category}
-                  </p>
-                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    {project.github && (
-                      <Button
-                        size="sm"
-                        className="flex items-center gap-2 text-xs bg-pink-600 hover:bg-pink-700 text-white"
-                        onClick={() => window.open(project.github, "_blank")}
-                      >
-                        <FaGithub className="h-3 w-3" />
-                        Code
-                      </Button>
-                    )}
-                    {project.liveUrl && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex items-center gap-2 text-xs border-pink-600 text-pink-600 hover:bg-pink-50"
-                        onClick={() => window.open(project.liveUrl, "_blank")}
-                      >
-                        <ExternalLink className="h-3 w-3" />
-                        Live Demo
-                      </Button>
-                    )}
-                  </div>
-                </div>
-              </Card>
+              <FeaturedProjectCard project={featuredProject} />
             </motion.div>
-          ))}
+          )}
+
+          {/* Other Projects Grid - Elegant Standard Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {otherProjects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+              >
+                <StandardProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <div className="text-center">
-          <a
-            href="https://github.com/AnsahFredd"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-base font-semibold">
-              Show More
-              <ArrowRight className="ml-2 h-4 w-4" />
+          <Link href="/projects" passHref>
+            <Button
+              className="bg-card text-foreground border-border border hover:bg-pink-600 hover:text-white hover:border-pink-600 px-8 py-6 rounded-xl text-lg font-black shadow-xl transition-all hover:scale-105 active:scale-95 flex items-center gap-3 mx-auto group"
+            >
+              View All Projects <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
+  );
+}
+
+function FeaturedProjectCard({ project }: { project: Project }) {
+  return (
+    <Card className="group flex flex-col lg:flex-row rounded-4xl overflow-hidden border-border/50 bg-card/40 backdrop-blur-md hover:border-pink-500 transition-all duration-500 hover:shadow-2xl">
+      {/* Padded image container to prevent clipping and make it look premium */}
+      <div className="lg:w-[55%] bg-muted/30 p-8 lg:p-12 relative flex items-center justify-center shrink-0">
+         <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border border-border/50 group-hover:scale-[1.02] transition-transform duration-700">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover object-top"
+            />
+         </div>
+         <div className="absolute top-6 left-6 z-10">
+          <span className="bg-background/90 backdrop-blur-md text-foreground px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest border border-border/50 shadow-sm">
+            {project.category}
+          </span>
+        </div>
+      </div>
+
+      <div className="p-8 lg:p-12 flex flex-col justify-center flex-1">
+        <h3 className="font-black text-foreground leading-[1.1] mb-6 tracking-tight text-3xl lg:text-4xl">
+          {project.title}
+        </h3>
+        <p className="text-muted-foreground mb-8 text-lg leading-relaxed font-medium">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2 mb-10">
+          {project.tags?.map((tag: string) => (
+            <span key={tag} className="text-xs font-black text-pink-600 uppercase tracking-[0.2em] px-3 py-1.5 bg-pink-500/5 rounded-lg border border-pink-500/20">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-6 pt-6 border-t border-border/50">
+          {project.slug === "lawlens" && (
+            <Button 
+              variant="link" 
+              className="p-0 h-auto text-pink-600 font-black hover:no-underline flex items-center gap-2 group/btn uppercase tracking-widest text-sm"
+              onClick={() => window.location.href = `/projects/${project.slug}`}
+            >
+              Case Study <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+            </Button>
+          )}
+          <div className="flex gap-6 ml-auto lg:ml-0">
+            <button
+              className="text-xs font-black text-foreground/70 hover:text-pink-600 flex items-center gap-2 transition-colors uppercase tracking-[0.2em]"
+              onClick={() => window.open(project.github || "#", "_blank")}
+            >
+              <FaGithub className="h-5 w-5" /> Code
+            </button>
+            {project.liveUrl && (
+              <button
+                className="text-xs font-black text-foreground/70 hover:text-pink-600 flex items-center gap-2 transition-colors uppercase tracking-[0.2em]"
+                onClick={() => window.open(project.liveUrl || undefined, "_blank")}
+              >
+                <ExternalLink className="h-5 w-5" /> Live
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+export function StandardProjectCard({ project }: { project: Project }) {
+  return (
+    <Card className="group h-full flex flex-col rounded-4xl overflow-hidden border-border/50 bg-card/20 backdrop-blur-md hover:border-pink-500 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+      <div className="p-4 pb-0 opacity-90 group-hover:opacity-100 transition-opacity">
+        <div className="relative w-full aspect-4/3 rounded-3xl overflow-hidden border border-border/50">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          />
+        </div>
+      </div>
+
+      <div className="p-6 flex flex-col justify-between flex-1">
+        <div>
+           <span className="text-pink-600 text-[10px] font-black uppercase tracking-widest block mb-2">
+            {project.category}
+          </span>
+          <h3 className="font-black text-foreground leading-tight mb-3 tracking-tight text-xl">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground mb-6 leading-relaxed font-medium text-sm line-clamp-3">
+            {project.description}
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between pt-4 border-t border-border/30 mt-auto">
+          <div className="flex gap-4">
+            <button
+              className="text-[10px] font-black text-foreground/70 hover:text-pink-600 flex items-center gap-2 transition-colors uppercase tracking-[0.2em]"
+              onClick={() => window.open(project.github || "#", "_blank")}
+            >
+              <FaGithub className="h-4 w-4" /> Code
+            </button>
+            {project.liveUrl && (
+              <button
+                className="text-[10px] font-black text-foreground/70 hover:text-pink-600 flex items-center gap-2 transition-colors uppercase tracking-[0.2em]"
+                onClick={() => window.open(project.liveUrl || undefined, "_blank")}
+              >
+                <ExternalLink className="h-4 w-4" /> Live
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </Card>
   );
 }

@@ -6,7 +6,7 @@ import SkillsTabs from "./SkillsTabs";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-6 bg-gray-50  ">
+    <section id="about" className="py-24 px-6 bg-muted/30 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,12 +18,12 @@ export function AboutSection() {
           <p className="text-pink-500 font-semibold uppercase tracking-wide mb-2">
             Get to Know Me
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground">
             About Me
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,18 +31,15 @@ export function AboutSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative w-80 h-80 mx-auto">
-              {/* Gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-100 to-purple-100 rounded-3xl transform rotate-6"></div>
-
+            <div className="relative w-56 h-56 mx-auto">
               {/* Image container */}
-              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl border border-border/50">
                 <Image
                   src="/fred3.jpg"
                   alt="AnsFred"
-                  width={320}
-                  height={320}
-                  className="object-cover w-full h-full"
+                  width={224}
+                  height={224}
+                  className="object-cover w-full h-full hover:scale-[1.02] transition-transform duration-500"
                 />
               </div>
             </div>
@@ -56,43 +53,43 @@ export function AboutSection() {
           >
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Passionate Full Stack Developer
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  Architecting Solutions, Not Just Apps
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  I&#39;m a passionate software developer with a strong focus on
-                  creating user-friendly web interfaces and robust backend
-                  systems. I enjoy exploring modern technologies and constantly
-                  learning new frameworks to build innovative solutions.
+                <p className="text-muted-foreground leading-[1.6] mb-6 text-lg">
+                  I don&#39;t just build apps; I architect solutions that solve
+                  real-world friction. From automating legal workflows to creating
+                  seamless event experiences, my focus is on bridge-building
+                  between complex backend logic and human-centric design.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  With expertise in both frontend and backend development, I
-                  bring ideas to life through clean code, intuitive designs, and
-                  seamless user experiences. I&#39;m always excited to take on
-                  new challenges and collaborate on interesting projects.
+                <p className="text-muted-foreground leading-[1.6] text-lg">
+                  With 3+ years of experience in the React and Django ecosystems,
+                  I bring ideas to life through high-performance code and 
+                  intuitive interfaces. My goal is to ensure every line of code 
+                  serves a purpose: making the user&#39;s life easier.
                 </p>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 py-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-500 mb-1">
-                    10+
+              <div className="grid grid-cols-3 gap-2 py-6 border-y border-border/50 my-8">
+                <div className="text-center group">
+                  <div className="text-3xl font-extrabold text-pink-500 mb-1">
+                    15+
                   </div>
-                  <div className="text-sm text-gray-600">Projects</div>
+                  <div className="text-[10px] text-muted-foreground font-black uppercase tracking-widest">Projects</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-500 mb-1">
+                <div className="text-center group">
+                  <div className="text-3xl font-extrabold text-pink-500 mb-1">
                     3+
                   </div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-[10px] text-muted-foreground font-black uppercase tracking-widest">Years Exp.</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-500 mb-1">
-                    100%
+                <div className="text-center group">
+                  <div className="text-3xl font-extrabold text-pink-500 mb-1">
+                    99%
                   </div>
-                  <div className="text-sm text-gray-600">
-                    Client Satisfaction
+                  <div className="text-[10px] text-muted-foreground font-black uppercase tracking-widest">
+                    Success
                   </div>
                 </div>
               </div>
@@ -108,12 +105,11 @@ export function AboutSection() {
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Technical Skills
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              Technical Arsenal
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Here are the technologies and tools I work with to bring ideas to
-              life
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-medium">
+              The tools and technologies I use to turn vision into reality.
             </p>
           </div>
 

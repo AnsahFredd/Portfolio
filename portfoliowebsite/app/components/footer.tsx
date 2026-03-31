@@ -2,6 +2,7 @@
 
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -30,7 +31,7 @@ export function Footer() {
               <FaGithub />
             </a>
             <a
-              href="www.linkedin.com/in/ansah-fredrick-owusu-709654394"
+              href="https://www.linkedin.com/in/ansah-fredrick-owusu-709654394"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-pink-500 transition"
@@ -50,16 +51,16 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-border/50 text-base text-muted-foreground font-bold">
           <p>© {year} AnsFredd • Architecting the Future.</p>
-          <div className="flex space-x-8 mt-6 md:mt-0 uppercase tracking-widest text-xs">
-            <a href="#" className="hover:text-pink-600 transition-colors">
+          <div className="flex space-x-8 mt-6 md:mt-0 uppercase tracking-widest text-[10px] sm:text-xs">
+            <Link href="/terms" className="hover:text-pink-600 transition-colors">
               Terms
-            </a>
-            <a href="#" className="hover:text-pink-600 transition-colors">
+            </Link>
+            <Link href="/privacy" className="hover:text-pink-600 transition-colors">
               Privacy
-            </a>
-            <a href="#contact" className="hover:text-pink-600 transition-colors">
+            </Link>
+            <Link href="/#contact" className="hover:text-pink-600 transition-colors">
               Connect
-            </a>
+            </Link>
           </div>
         </div>
       </div>

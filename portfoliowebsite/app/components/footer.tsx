@@ -52,9 +52,6 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-border/50 text-base text-muted-foreground font-bold">
           <p>© {year} AnsFredd • Architecting the Future.</p>
           <div className="flex space-x-8 mt-6 md:mt-0 uppercase tracking-widest text-[10px] sm:text-xs">
-            <Link href="/terms" className="hover:text-pink-600 transition-colors">
-              Terms
-            </Link>
             <Link href="/privacy" className="hover:text-pink-600 transition-colors">
               Privacy
             </Link>

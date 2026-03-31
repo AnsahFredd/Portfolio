@@ -51,11 +51,11 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-border/50 text-base text-muted-foreground font-bold">
           <p>© {year} AnsFredd • Architecting the Future.</p>
-          <div className="flex space-x-8 mt-6 md:mt-0 uppercase tracking-widest text-[10px] sm:text-xs">
-            <Link href="/privacy" className="hover:text-pink-600 transition-colors">
-              Privacy
-            </Link>
-            <Link href="/#contact" className="hover:text-pink-600 transition-colors">
+          <div className="flex flex-col md:flex-row items-center gap-6 mt-6 md:mt-0 font-bold">
+            <p className="text-[10px] text-muted-foreground/60 max-w-xs text-center md:text-right leading-relaxed">
+              Your info submitted via the contact form is used only to respond to your inquiry and is never shared.
+            </p>
+            <Link href="/#contact" className="uppercase tracking-widest text-[10px] sm:text-xs hover:text-pink-600 transition-colors">
               Connect
             </Link>
           </div>

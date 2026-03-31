@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
-  serverExternalPackages: ["lightningcss"],
+  serverExternalPackages: ["lightningcss", "@tailwindcss/oxide"],
 };
 
 export default nextConfig;

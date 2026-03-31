@@ -79,7 +79,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative hidden lg:block rounded-[3rem] overflow-hidden group border border-border/50 shadow-2xl"
+            className="relative rounded-[3rem] overflow-hidden group border border-border/50 shadow-2xl min-h-[300px] lg:h-auto"
           >
             <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/20 to-background/80 z-10" />
             <Image

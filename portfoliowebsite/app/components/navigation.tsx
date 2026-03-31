@@ -20,11 +20,11 @@ export function Navigation() {
   };
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About me" },
+    { href: "#about", label: "About" },
+    { href: "#experience", label: "Experience" },
     { href: "#services", label: "Services" },
-    { href: "#work", label: "My work" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#work", label: "Work" },
+    { href: "#testimonials", label: "Reviews" },
   ];
 
   return (

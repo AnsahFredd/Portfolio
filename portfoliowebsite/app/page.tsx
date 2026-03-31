@@ -6,6 +6,7 @@ import { PortfolioSection } from "./components/portfolio";
 import { TestimonialsSection } from "./components/testimonials";
 import { ContactSection } from "./components/contact";
 import { Footer } from "./components/footer";
+import { ExperienceLogos } from "./components/ExperienceLogos";
 
 export default function Portfolio() {
   return (
@@ -13,6 +14,7 @@ export default function Portfolio() {
       <Navigation />
       <HeroSection />
       <AboutSection />
+      <ExperienceLogos />
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />

@@ -110,7 +110,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        <div className="flex items-center gap-6 pt-6 border-t border-border/50">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-6 border-t border-border/50">
           {project.slug === "lawlens" && (
             <Button 
               variant="link" 
@@ -120,7 +120,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
               Case Study <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </Button>
           )}
-          <div className="flex gap-6 ml-auto lg:ml-0">
+          <div className="flex gap-6">
             <button
               className="text-xs font-black text-foreground/70 hover:text-pink-600 flex items-center gap-2 transition-colors uppercase tracking-[0.2em]"
               onClick={() => window.open(project.github || "#", "_blank")}

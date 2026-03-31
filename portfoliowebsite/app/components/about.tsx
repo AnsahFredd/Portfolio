@@ -71,7 +71,7 @@ export function AboutSection() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-2 py-6 border-y border-border/50 my-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-8 gap-x-2 py-6 border-y border-border/50 my-8">
                 <div className="text-center group">
                   <div className="text-3xl font-extrabold text-pink-500 mb-1">
                     15+

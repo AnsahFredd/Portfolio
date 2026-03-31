@@ -1,64 +1,79 @@
 "use client";
+
+import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 
 export function HeroSection() {
   return (
-    <section id="home" className="pt-24 pb-16 px-6 bg-white min-h-screen">
-      <div className="max-w-4xl mx-auto text-center">
-        {/* Floating Profile Images */}
-        <div className="relative mb-8"></div>
+    <section id="home" className="pt-32 pb-24 px-6 bg-background min-h-[90vh] flex items-center justify-center transition-colors duration-500 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-        <div className="w-48 h-48 aspect-square mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg relative">
-          <Image
-            src="/fred2.jpg"
-            alt="AnsFredd"
-            width={192}
-            height={192}
-            className="object-cover w-full h-full"
-          />
-        </div>
+      <div className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+        {/* Floating Profile Badge */}
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 }}
+           className="mb-8 p-1.5 rounded-full bg-background/50 backdrop-blur-md border border-border/50 shadow-xl flex items-center gap-4 pr-6 cursor-pointer hover:border-pink-500/30 transition-colors"
+        >
+            <div className="w-10 h-10 rounded-full overflow-hidden relative border border-border/50 shrink-0">
+               <Image src="/fred2.jpg" alt="AnsahFredd" fill className="object-cover" />
+            </div>
+            <span className="text-sm font-black uppercase tracking-[0.2em] text-foreground">
+              Hello, I&#39;m Ansah
+            </span>
+        </motion.div>
 
-        <p className="text-gray-600 mb-2">
-          Hi! I&#39;m Ansah Frederick Owusu 👋
-        </p>
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-5xl md:text-[80px] lg:text-[110px] font-black text-foreground mb-8 leading-[0.9] tracking-tighter"
+        >
+          Building <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-500 to-purple-500">Digital</span> <br/>
+          Clarity.
+        </motion.h1>
 
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          <span className="text-pink-600">Full Stack Developer</span>
-          <br />
-          based in Ghana.
-        </h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-muted-foreground mb-12 max-w-2xl text-xl md:text-2xl font-medium leading-relaxed"
+        >
+          I architect high-performance web ecosystems and intuitive mobile experiences. 
+          Based in Ghana, serving global innovation.
+        </motion.p>
 
-        <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-          I&#39;m a passionate full stack developer from Ghana with 3+ years of
-          experience building responsive, user-friendly web applications. I
-          specialize in modern technologies like React, Next.js, Node.js, and
-          MongoDB to create seamless digital experiences.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
           <Button
-            className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3"
+            className="bg-foreground text-background hover:bg-pink-600 hover:text-white px-8 py-6 rounded-full text-lg font-black shadow-xl transition-all hover:scale-105 active:scale-95 group uppercase tracking-widest"
             onClick={() => {
               document
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            connect with me <ArrowRight className="ml-2 h-4 w-4" />
+            Start a Project <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
 
           <Button
             variant="outline"
-            className="px-6 py-3 bg-transparent"
+            className="px-8 py-6 border-border rounded-full text-lg font-black hover:bg-muted transition-all shadow-xs uppercase tracking-widest text-foreground"
             onClick={() => {
               window.open("/resume.pdf", "_blank");
             }}
           >
-            my resume <Download className="ml-2 h-4 w-4" />
+            Download CV <Download className="ml-3 h-5 w-5" />
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

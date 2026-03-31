@@ -1,4 +1,5 @@
-import { projects, StandardProjectCard } from "../components/portfolio";
+import { projects } from "../data/projects";
+import { StandardProjectCard } from "../components/portfolio";
 import { Navigation } from "../components/navigation";
 import { Footer } from "../components/footer";
 import { ArrowLeft } from "lucide-react";

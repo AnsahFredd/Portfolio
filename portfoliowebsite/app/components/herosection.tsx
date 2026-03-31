@@ -54,7 +54,7 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button
-            className="bg-foreground text-background hover:bg-pink-600 hover:text-white px-8 py-6 rounded-full text-lg font-black shadow-xl transition-all hover:scale-105 active:scale-95 group"
+            className="bg-foreground text-background hover:bg-pink-600 hover:text-white px-8 py-6 rounded-full text-lg font-black shadow-xl transition-all hover:scale-105 active:scale-95 group uppercase tracking-widest"
             onClick={() => {
               document
                 .getElementById("contact")
@@ -66,7 +66,7 @@ export function HeroSection() {
 
           <Button
             variant="outline"
-            className="px-8 py-6 border-border rounded-full text-lg font-black hover:bg-muted text-foreground dark:text-white transition-all shadow-xs"
+            className="px-8 py-6 border-border rounded-full text-lg font-black hover:bg-muted transition-all shadow-xs uppercase tracking-widest text-foreground"
             onClick={() => {
               window.open("/resume.pdf", "_blank");
             }}
